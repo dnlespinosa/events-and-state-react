@@ -1,0 +1,67 @@
+Event Handlers 
+    Attach event handlers to components in React 
+    Define React state 
+    Learning how to use useState
+
+DOM vs React 
+    React event names are camelCase not lowercase 
+        <button onClick={activateLasers}>
+            ActivateLazers
+        </button>
+
+Event Attributes 
+    Any event you can listen for in JS you can listen for in React 
+        onClick
+        onMouseOver
+        onSubmit
+        etc
+        reactjs.org/docs/events.html
+
+React State 
+    Core Concepts 
+        Components 
+            Building block of react 
+            Combine logic and presentation 
+        Props 
+            Data that we can pass to components 
+            Immutable
+        State  
+            Data specific to a component 
+            Can Change 
+What common things belong in state
+    Showing or hiding something 
+    Fetching data from an API 
+    Themes color or styles that change based on an event 
+    When working with some information, ask yourself if this needs to ________
+
+State
+    state is created using useState
+    useState return an array with two values
+        What the piece of state is 
+        A function to change it 
+            const [mood, setMood] = useState('happy');
+
+Initial State 
+    import React, { useState } from 'react';
+    function person() {
+        const [mood, setMood] = useState('happy');
+
+        return (
+            <div> your mood is {mood}</div>
+        );
+    }
+
+    We import useState from React 
+    useState takes one argument, what you'd like the initial state to be 
+    You must call useState IN the component 
+    You CANNOT call useState in loops or conditionals 
+
+    Changing State 
+        We'll do this in our example using setMood
+        Whatever we pass to this function will be the new value of mood 
+
+        return (
+            <div> your mood is {mood}</div>
+                <button onClick={() => setMood('exited')}>Change</button>
+            </div>
+        )
